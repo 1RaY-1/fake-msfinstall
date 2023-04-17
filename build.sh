@@ -1,4 +1,5 @@
-#!/bin/sh
+#!/bin/bash
+set -e
 gcc main.c -o msfinstall
 mv msfinstall ..
 cd .. && rm -rf fake-msfinstall/
